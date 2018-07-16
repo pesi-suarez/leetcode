@@ -1,26 +1,74 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCodeClassLibrary
 {
     public class DecodeString394
     {
-        /*
         public string DecodeString(string str)
         {
-
+            List<string> tokens = Tokenize(str);
+            List<string> decodedTokens = tokens.Select(t => DecodeToken(t)).ToList();
+            return string.Join("", decodedTokens);
         }
-        */
+
+        public string DecodeToken(string tokenStr)
+        {
+            int pos = 0;
+            string chars = GetChars(tokenStr, ref pos);
+            if (pos == tokenStr.Length) return chars;
+            else
+            {
+                string numbers = GetNumbers(tokenStr, ref pos);
+                int repeats = int.Parse(numbers);
+                return chars + RepeatString(repeats, DecodeString(tokenStr.Substring(pos+1, tokenStr.Length-pos-2)));
+            }
+        }
+
+        public string GetChars(string str, ref int pos)
+        {
+            int i;
+            string result = string.Empty;
+            for (i = 0; i < str.Length; i++)
+            {
+                if ((str[i] < '0' || str[i] > '9') && str[i] != ']') result += str[i];
+                else break;
+            }
+            pos = i;
+            return result;
+        }
+
+        public string GetNumbers(string str, ref int pos)
+        {
+            int i;
+            string result = string.Empty;
+            for (i = pos; i < str.Length; i++)
+            {
+                if (str[i] >= '0' && str[i] <= '9') result += str[i];
+                else break;
+            }
+            pos = i;
+            return result;
+        }
+
+        public string RepeatString(int n, string str)
+        {
+            if (n == 1) return str;
+            else return str + RepeatString(n - 1, str);
+        }
 
         public List<string> Tokenize(string str)
         {
             List<string> result = new List<string>();
             int pos = 0;
             string workingStr = str;
-            while (pos != workingStr.Length-1)
+            bool condition = true;
+            while (condition)
             {
                 result.Add(ExtractToken(workingStr, ref pos));
-                if (pos != workingStr.Length-1)
-                    workingStr = workingStr.Substring(pos+1);
+                if (pos != workingStr.Length)
+                    workingStr = workingStr.Substring(pos);
+                else condition = false;
             }
             return result;
         }
@@ -47,7 +95,7 @@ namespace LeetCodeClassLibrary
 
                     if (bracketCounter == 0)
                     {
-                        pos = i;
+                        pos = i+1;
                         return head + tail;
                     }
                 }
