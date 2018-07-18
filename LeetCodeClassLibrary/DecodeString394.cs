@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCodeClassLibrary
@@ -14,28 +15,15 @@ namespace LeetCodeClassLibrary
 
         public string DecodeToken(string tokenStr)
         {
-            int pos = 0;
-            string chars = GetChars(tokenStr, ref pos);
-            if (pos == tokenStr.Length) return chars;
+            if (tokenStr.Equals(string.Empty)) return tokenStr;
+            else if (tokenStr[0] < '0' || tokenStr[0] > '9') return tokenStr;
             else
             {
+                int pos = 0;
                 string numbers = GetNumbers(tokenStr, ref pos);
                 int repeats = int.Parse(numbers);
-                return chars + RepeatString(repeats, DecodeString(tokenStr.Substring(pos+1, tokenStr.Length-pos-2)));
+                return RepeatString(repeats, DecodeString(tokenStr.Substring(pos+1, tokenStr.Length-pos-2)));
             }
-        }
-
-        public string GetChars(string str, ref int pos)
-        {
-            int i;
-            string result = string.Empty;
-            for (i = 0; i < str.Length; i++)
-            {
-                if ((str[i] < '0' || str[i] > '9') && str[i] != ']') result += str[i];
-                else break;
-            }
-            pos = i;
-            return result;
         }
 
         public string GetNumbers(string str, ref int pos)
@@ -75,6 +63,10 @@ namespace LeetCodeClassLibrary
 
         public string ExtractToken(string str, ref int pos)
         {
+            if (str.Equals(string.Empty)) return str;
+            if (str[0] < '0' || str[0] > '9')
+                return ExtractConstantToken(str, ref pos);
+
             int headPos = 0;
             string head = GetHead(str, ref headPos);
             if (headPos == str.Length)
@@ -102,6 +94,19 @@ namespace LeetCodeClassLibrary
             }
 
             return string.Empty; //Will never get here.
+        }
+
+        public string ExtractConstantToken(string str, ref int pos)
+        {
+            int i;
+            string result = string.Empty;
+            for (i = 0; i < str.Length; i++)
+            {
+                if ((str[i] < '0' || str[i] > '9') && str[i] != ']') result += str[i];
+                else break;
+            }
+            pos = i;
+            return result;
         }
 
         public string GetHead(string str, ref int pos)

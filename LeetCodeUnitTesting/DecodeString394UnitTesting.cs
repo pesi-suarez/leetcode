@@ -31,9 +31,9 @@ namespace LeetCodeUnitTesting
             Assert.AreEqual(str1, dec.ExtractToken(str1, ref pos));
             Assert.AreEqual(str1.Length, pos);
 
-            string str2 = "amcis2[k]a5[hg3[ft]]";
-            Assert.AreEqual("amcis2[k]", dec.ExtractToken(str2, ref pos));
-            Assert.AreEqual(9, pos);
+            string str2 = "2[k]a5[hg3[ft]]";
+            Assert.AreEqual("2[k]", dec.ExtractToken(str2, ref pos));
+            Assert.AreEqual(4, pos);
 
         }
 
@@ -52,8 +52,10 @@ namespace LeetCodeUnitTesting
             DecodeString394 dec = new DecodeString394();
             string str2 = "amcis2[k]a5[hg3[ft]]";
             List<string> tokens = dec.Tokenize(str2);
-            Assert.AreEqual("amcis2[k]", tokens[0]);
-            Assert.AreEqual("a5[hg3[ft]]", tokens[1]);
+            Assert.AreEqual("amcis", tokens[0]);
+            Assert.AreEqual("2[k]", tokens[1]);
+            Assert.AreEqual("a", tokens[2]);
+            Assert.AreEqual("5[hg3[ft]]", tokens[3]);
 
             string str3 = "3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
             tokens = dec.Tokenize(str3);
@@ -70,20 +72,20 @@ namespace LeetCodeUnitTesting
         }
         
         [TestMethod]
-        public void GetChars()
+        public void ExtractConstantToken()
         {
             DecodeString394 dec = new DecodeString394();
             string str1 = "asdfdshj";
             int pos = 0;
-            Assert.AreEqual(str1, dec.GetChars(str1, ref pos));
+            Assert.AreEqual(str1, dec.ExtractConstantToken(str1, ref pos));
             Assert.AreEqual(str1.Length, pos);
 
             string str2 = "amcis2[k]";
-            Assert.AreEqual("amcis", dec.GetChars(str2, ref pos));
+            Assert.AreEqual("amcis", dec.ExtractConstantToken(str2, ref pos));
             Assert.AreEqual(5, pos);
 
             string str3 = "a5[hg3[ft]]";
-            Assert.AreEqual("a", dec.GetChars(str3, ref pos));
+            Assert.AreEqual("a", dec.ExtractConstantToken(str3, ref pos));
             Assert.AreEqual(1, pos);
         }
 
@@ -111,11 +113,11 @@ namespace LeetCodeUnitTesting
             string str1 = "asdfdshj";
             Assert.AreEqual(str1, dec.DecodeToken(str1));
 
-            string str2 = "amcis2[k]";
-            Assert.AreEqual("amciskk", dec.DecodeToken(str2));
+            string str2 = "2[k]";
+            Assert.AreEqual("kk", dec.DecodeToken(str2));
 
-            string str3 = "a5[hg3[ft]]";
-            Assert.AreEqual("ahgftftfthgftftfthgftftfthgftftfthgftftft", dec.DecodeToken(str3));
+            string str3 = "5[hg3[ft]]";
+            Assert.AreEqual("hgftftfthgftftfthgftftfthgftftfthgftftft", dec.DecodeToken(str3));
         }
 
         [TestMethod]
@@ -134,6 +136,8 @@ namespace LeetCodeUnitTesting
             string str2 = "3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
             Assert.AreEqual("zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef", dec.DecodeString(str2));
 
+            string str5 = string.Empty;
+            Assert.AreEqual(string.Empty, dec.DecodeString(str5));
         }
     }
 }
