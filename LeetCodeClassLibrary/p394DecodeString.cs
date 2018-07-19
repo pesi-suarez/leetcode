@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace LeetCodeClassLibrary
 {
-    public class problem394DecodeString
+    public class p394DecodeString
     {
         public string DecodeString(string str)
         {

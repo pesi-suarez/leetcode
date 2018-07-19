@@ -7,12 +7,12 @@ using LeetCodeClassLibrary;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class problem707DesignLinkedListIterativeUnitTesting
+    public class utp707DesignLinkedListIterative
     {
         [TestMethod]
         public void ListOperations()
         {
-            problem707DesignLinkedListIterative myList = new problem707DesignLinkedListIterative();
+            p707DesignLinkedListIterative myList = new p707DesignLinkedListIterative();
             myList.AddAtHead(2);
             myList.AddAtHead(5);
             myList.AddAtTail(1);

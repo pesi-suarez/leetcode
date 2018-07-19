@@ -1,6 +1,6 @@
 ﻿namespace LeetCodeClassLibrary
 {
-    public class problem707DesignLinkedList
+    public class p707DesignLinkedList
     {
         private class MyNode
         {
@@ -50,7 +50,7 @@
         private MyNode Head { get; set; }
 
         /** Initialize your data structure here. */
-        public problem707DesignLinkedList()
+        public p707DesignLinkedList()
         {
             Head = null;
         }

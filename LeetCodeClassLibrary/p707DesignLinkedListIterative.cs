@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeClassLibrary
 {
-    public class problem707DesignLinkedListIterative
+    public class p707DesignLinkedListIterative
     {
         private class MyNode
         {
@@ -17,7 +17,7 @@ namespace LeetCodeClassLibrary
         private MyNode Head { get; set; }
 
         /** Initialize your data structure here. */
-        public problem707DesignLinkedListIterative()
+        public p707DesignLinkedListIterative()
         {
             Head = null;
         }

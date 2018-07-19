@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class problem394DecodeStringUnitTesting
+    public class utp394DecodeString
     {
         [TestMethod]
         public void GetHead()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.GetHead(str1, ref pos));
@@ -25,7 +25,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void ExtractToken()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.ExtractToken(str1, ref pos));
@@ -49,7 +49,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void Tokenize()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str2 = "amcis2[k]a5[hg3[ft]]";
             List<string> tokens = dec.Tokenize(str2);
             Assert.AreEqual("amcis", tokens[0]);
@@ -67,14 +67,14 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void RepeatString()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             Assert.AreEqual("foofoofoo", dec.RepeatString(3, "foo"));
         }
         
         [TestMethod]
         public void ExtractConstantToken()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.ExtractConstantToken(str1, ref pos));
@@ -92,7 +92,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void GetNumbers()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             int pos = 0;
 
             string str2 = "amcis2[k]";
@@ -109,7 +109,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void DecodeToken()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str1 = "asdfdshj";
             Assert.AreEqual(str1, dec.DecodeToken(str1));
 
@@ -123,7 +123,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void DecodeString()
         {
-            problem394DecodeString dec = new problem394DecodeString();
+            p394DecodeString dec = new p394DecodeString();
             string str4 = "2[jk]e1[f]";
             Assert.AreEqual("jkjkef", dec.DecodeString(str4));
 

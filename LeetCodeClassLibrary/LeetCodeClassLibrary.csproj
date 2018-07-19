@@ -40,9 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="problem394DecodeString.cs" />
-    <Compile Include="problem707DesignLinkedList.cs" />
-    <Compile Include="problem707DesignLinkedListIterative.cs" />
+    <Compile Include="p394DecodeString.cs" />
+    <Compile Include="p707DesignLinkedList.cs" />
+    <Compile Include="p707DesignLinkedListIterative.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
