@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LeetCodeClassLibrary;
 using System.Collections.Generic;
-using LeetCodeClassLibrary;
 
 namespace LeetCodeUnitTesting
 {
