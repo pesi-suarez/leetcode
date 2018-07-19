@@ -10,11 +10,11 @@ namespace LeetCodeClassLibrary
     {
         private class MyNode
         {
-            public int Val { get; set; }
-            public MyNode Next { get; set; }
+            public int Val;
+            public MyNode Next;
         }
 
-        private MyNode Head { get; set; }
+        private MyNode Head;
 
         /** Initialize your data structure here. */
         public p707DesignLinkedListIterative()
