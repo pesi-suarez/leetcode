@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//NOTA: Esta versión usando bloques try-catch es más lenta que la versión iterativa original. Lo que se gana al no hacer condicionales adicionales se pierde en la gestión de las excepciones.
 namespace LeetCodeClassLibrary
 {
     public class p707DesignLinkedListIterative
@@ -25,18 +26,16 @@ namespace LeetCodeClassLibrary
         /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
         public int Get(int index)
         {
-            if (Head == null) return -1;
-            else
+            try
             {
                 MyNode iterator = Head;
-                while (iterator.Next != null)
-                {
-                    if (index == 0) return iterator.Val;
-                    index--;
+                for (int i = 0; i < index; i++)
                     iterator = iterator.Next;
-                }
-                if (index == 0) return iterator.Val;
-                else return -1;
+                return iterator.Val;
+            }
+            catch (Exception)
+            {
+                return -1;
             }
         }
 
@@ -64,24 +63,18 @@ namespace LeetCodeClassLibrary
         public void AddAtIndex(int index, int val)
         {
             if (index == 0) AddAtHead(val);
-            else if (Head != null)
+            else
             {
-                MyNode iterator = Head;
-                while (iterator.Next != null)
+                try
                 {
-                    if (index==1)
-                    {
-                        MyNode newNode = new MyNode() { Next = iterator.Next, Val = val };
-                        iterator.Next = newNode;
-                        return;
-                    }
-                    index--;
-                    iterator = iterator.Next;
-                }
-                if (index == 1)
-                {
+                    MyNode iterator = Head;
+                    for (int i = 1; i < index; i++)
+                        iterator = iterator.Next;
                     MyNode newNode = new MyNode() { Next = iterator.Next, Val = val };
                     iterator.Next = newNode;
+                }
+                catch (Exception)
+                {
                     return;
                 }
             }
@@ -90,22 +83,19 @@ namespace LeetCodeClassLibrary
         /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
-            if (Head != null)
+            if (index == 0) Head = Head.Next;
+            else
             {
-                if (index == 0) Head = Head.Next;
-                else
+                try
                 {
                     MyNode iterator = Head;
-                    while (iterator.Next != null)
-                    {
-                        if (index == 1)
-                        {
-                            iterator.Next = iterator.Next.Next;
-                            return;
-                        }
-                        index--;
+                    for (int i = 1; i < index; i++)
                         iterator = iterator.Next;
-                    }
+                    iterator.Next = iterator.Next.Next;
+                }
+                catch (Exception)
+                {
+                    return;
                 }
             }
         }
