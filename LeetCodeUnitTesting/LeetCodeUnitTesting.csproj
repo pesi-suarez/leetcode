@@ -48,7 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecodeString394UnitTesting.cs" />
+    <Compile Include="problem707DesignLinkedListIterativeUnitTesting.cs" />
+    <Compile Include="problem394DecodeStringUnitTesting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
