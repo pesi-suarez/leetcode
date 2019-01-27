@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="utp807MaxIncreaseToKeepCitySkyline.cs" />
     <Compile Include="utp855ExamRoom.cs" />
     <Compile Include="utp707DesignLinkedListIterative.cs" />
     <Compile Include="utp394DecodeString.cs" />

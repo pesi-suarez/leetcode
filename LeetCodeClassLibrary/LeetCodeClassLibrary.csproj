@@ -43,6 +43,7 @@
     <Compile Include="p394DecodeString.cs" />
     <Compile Include="p707DesignLinkedList.cs" />
     <Compile Include="p707DesignLinkedListIterative.cs" />
+    <Compile Include="p807MaxIncreaseToKeepCitySkyline.cs" />
     <Compile Include="p855ExamRoomV0.cs" />
     <Compile Include="p855ExamRoomV1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
