@@ -62,3 +62,36 @@ namespace p807MaxIncreaseToKeepCitySkyline
 
     }
 }
+
+/*
+//PHP Version:
+class Solution {
+    function maxIncreaseKeepingSkyline($grid) {
+        $N = count($grid);
+        $M = count($grid[0]);
+        $rowMaxes = array_fill(0, $N, 0);
+        $colMaxes = array_fill(0, $M, 0);
+        
+        for ($i = 0; $i< $N; $i++) {
+            for ($j = 0; $j< $M; $j++) {
+                $rowMaxes[$i] = max($rowMaxes[$i], $grid[$i][$j]);
+            }
+        }
+
+        for ($j = 0; $j< $M; $j++) {
+            for ($i = 0; $i< $N; $i++) {
+                $colMaxes[$i] = max($colMaxes[$i], $grid[$i][$j]);
+            }
+        }
+        
+        $ans = 0;
+        for ($i = 0; $i< $N; $i++) {
+            for ($j = 0; $j< $M; $j++) {
+                $ans += min($rowMaxes[$i], $colMaxes[$j]) - $grid[$i][$j];
+            }
+        }
+        
+        return $ans;
+    }
+}     
+*/
