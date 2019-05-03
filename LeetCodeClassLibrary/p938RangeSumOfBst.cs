@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeClassLibrary
+namespace p938RangeSumOfBst
 {
     public class Solution
     {

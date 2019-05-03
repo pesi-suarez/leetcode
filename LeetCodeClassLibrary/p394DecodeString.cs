@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCodeClassLibrary
+namespace p394DecodeString
 {
-    public class p394DecodeString
+    public class Solution
     {
         public string DecodeString(string str)
         {

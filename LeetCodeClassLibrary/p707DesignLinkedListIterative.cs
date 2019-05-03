@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeClassLibrary
+namespace p707DesignLinkedListIterative
 {
-    public class p707DesignLinkedListIterative
+    public class Solution
     {
         private class MyNode
         {
@@ -17,7 +17,7 @@ namespace LeetCodeClassLibrary
         private MyNode Head;
 
         /** Initialize your data structure here. */
-        public p707DesignLinkedListIterative()
+        public Solution()
         {
             Head = null;
         }

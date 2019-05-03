@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace p855ExamRoomV1
 {
-    public class ExamRoom
+    public class Solution
     {
         private int NSeats;
 
-        public ExamRoom(int N)
+        public Solution(int N)
         {
             NSeats = N;
         }

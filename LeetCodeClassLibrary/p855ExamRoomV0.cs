@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace p855ExamRoomV0
 {
-    public class ExamRoom
+    public class Solution
     {
         private int[] Seats;
         private int OccupiedSeats;
 
-        public ExamRoom (int N)
+        public Solution (int N)
         {
             Seats = new int[N];
             for (int i = 0; i < Seats.Length; i++) //Podría ser que se inicializara a cero al reservar espacio. Podría ser que no.

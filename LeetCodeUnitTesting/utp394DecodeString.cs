@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LeetCodeClassLibrary;
+using p394DecodeString;
 using System.Collections.Generic;
 
 namespace LeetCodeUnitTesting
@@ -11,7 +11,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void GetHead()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.GetHead(str1, ref pos));
@@ -25,7 +25,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void ExtractToken()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.ExtractToken(str1, ref pos));
@@ -49,7 +49,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void Tokenize()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str2 = "amcis2[k]a5[hg3[ft]]";
             List<string> tokens = dec.Tokenize(str2);
             Assert.AreEqual("amcis", tokens[0]);
@@ -67,14 +67,14 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void RepeatString()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             Assert.AreEqual("foofoofoo", dec.RepeatString(3, "foo"));
         }
         
         [TestMethod]
         public void ExtractConstantToken()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str1 = "asdfdshj";
             int pos = 0;
             Assert.AreEqual(str1, dec.ExtractConstantToken(str1, ref pos));
@@ -92,7 +92,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void GetNumbers()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             int pos = 0;
 
             string str2 = "amcis2[k]";
@@ -109,7 +109,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void DecodeToken()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str1 = "asdfdshj";
             Assert.AreEqual(str1, dec.DecodeToken(str1));
 
@@ -123,7 +123,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void DecodeString()
         {
-            p394DecodeString dec = new p394DecodeString();
+            Solution dec = new Solution();
             string str4 = "2[jk]e1[f]";
             Assert.AreEqual("jkjkef", dec.DecodeString(str4));
 

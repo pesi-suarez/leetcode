@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LeetCodeClassLibrary;
+using p707DesignLinkedListIterative;
 using System.Collections.Generic;
 
 namespace LeetCodeUnitTesting
@@ -11,7 +11,7 @@ namespace LeetCodeUnitTesting
         [TestMethod]
         public void ListOperations()
         {
-            p707DesignLinkedListIterative myList = new p707DesignLinkedListIterative();
+            Solution myList = new Solution();
             myList.AddAtHead(2);
             myList.AddAtHead(5);
             myList.AddAtTail(1);
