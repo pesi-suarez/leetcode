@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAD5F36C-815E-4B50-9D38-E9F173E374F0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LeetCodeClassLibrary</RootNamespace>
-    <AssemblyName>LeetCodeClassLibrary</AssemblyName>
+    <ProjectGuid>{4E25B155-C9C1-4500-B7A7-97434C9FC31E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestApplication</RootNamespace>
+    <AssemblyName>TestApplication</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,17 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="p1021RemoveOutermostParenthesis.cs" />
-    <Compile Include="p394DecodeString.cs" />
-    <Compile Include="p707DesignLinkedList.cs" />
-    <Compile Include="p707DesignLinkedListIterative.cs" />
-    <Compile Include="p709ToLowerCase.cs" />
-    <Compile Include="p754ReachANumber.cs" />
-    <Compile Include="p807MaxIncreaseToKeepCitySkyline.cs" />
-    <Compile Include="p855ExamRoomV0.cs" />
-    <Compile Include="p855ExamRoomV1.cs" />
-    <Compile Include="p938RangeSumOfBst.cs" />
+    <Compile Include="TestApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeetCodeClassLibrary\LeetCodeClassLibrary.csproj">
+      <Project>{dad5f36c-815e-4b50-9d38-e9f173e374f0}</Project>
+      <Name>LeetCodeClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

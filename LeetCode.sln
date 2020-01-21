@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeClassLibrary", "Lee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeUnitTesting", "LeetCodeUnitTesting\LeetCodeUnitTesting.csproj", "{3C263B2D-628D-4186-9364-D54832A46711}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{4E25B155-C9C1-4500-B7A7-97434C9FC31E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3C263B2D-628D-4186-9364-D54832A46711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C263B2D-628D-4186-9364-D54832A46711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C263B2D-628D-4186-9364-D54832A46711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E25B155-C9C1-4500-B7A7-97434C9FC31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E25B155-C9C1-4500-B7A7-97434C9FC31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E25B155-C9C1-4500-B7A7-97434C9FC31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E25B155-C9C1-4500-B7A7-97434C9FC31E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
