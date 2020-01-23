@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="p1021RemoveOutermostParenthesis.cs" />
     <Compile Include="p146LruCache.cs" />
+    <Compile Include="p1TwoSum.cs" />
     <Compile Include="p394DecodeString.cs" />
     <Compile Include="p707DesignLinkedList.cs" />
     <Compile Include="p707DesignLinkedListIterative.cs" />
