@@ -45,6 +45,8 @@
     <Compile Include="p1TwoSum.cs" />
     <Compile Include="p2AddTwoNumbers.cs" />
     <Compile Include="p394DecodeString.cs" />
+    <Compile Include="p42TrappingRainWaterUnsuccesfulAttempts.cs" />
+    <Compile Include="p42TrappingRainWater.cs" />
     <Compile Include="p707DesignLinkedList.cs" />
     <Compile Include="p707DesignLinkedListIterative.cs" />
     <Compile Include="p709ToLowerCase.cs" />
