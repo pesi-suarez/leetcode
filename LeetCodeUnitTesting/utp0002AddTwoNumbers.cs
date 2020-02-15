@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp2AddTwoNumbers
+    public class utp0002AddTwoNumbers
     {
         [TestMethod]
         public void DescriptionTest()

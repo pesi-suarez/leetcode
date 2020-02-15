@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp807MaxIncreaseToKeepCitySkyline
+    public class utp0807MaxIncreaseToKeepCitySkyline
     {
         [TestMethod]
         public void GivenTest()

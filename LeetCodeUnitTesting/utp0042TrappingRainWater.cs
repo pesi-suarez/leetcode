@@ -4,7 +4,7 @@ using p42TrappingRainWater;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp42TrappingRainWater
+    public class utp0042TrappingRainWater
     {
         [TestMethod]
         public void DescriptionTest()

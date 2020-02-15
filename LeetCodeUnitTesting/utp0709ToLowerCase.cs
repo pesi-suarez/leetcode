@@ -5,7 +5,7 @@ using p709ToLowerCase;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp709ToLowerCase
+    public class utp0709ToLowerCase
     {
         [TestMethod]
         public void DescriptionTests()

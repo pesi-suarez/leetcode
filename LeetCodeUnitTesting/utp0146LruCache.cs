@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp146LruCache
+    public class utp0146LruCache
     {
         [TestMethod]
         public void Descriptiontests()

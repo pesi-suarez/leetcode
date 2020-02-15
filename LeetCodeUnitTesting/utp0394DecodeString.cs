@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp394DecodeString
+    public class utp0394DecodeString
     {
         [TestMethod]
         public void GetHead()

@@ -9,7 +9,7 @@ using p200NumberOfIslands;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp200NumberOfIslands
+    public class utp0200NumberOfIslands
     {
         [TestMethod]
         public void DescriptionTest00()

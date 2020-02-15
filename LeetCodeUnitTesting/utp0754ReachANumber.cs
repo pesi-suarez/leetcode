@@ -5,7 +5,7 @@ using p754ReachANumber;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp754ReachANumber
+    public class utp0754ReachANumber
     {
         [TestMethod]
         public void DescriptionTests()

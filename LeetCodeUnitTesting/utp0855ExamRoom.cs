@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp855ExamRoom
+    public class utp0855ExamRoom
     {
         [TestMethod]
         public void ArrayInitilizationZero()

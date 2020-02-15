@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace LeetCodeUnitTesting
 {
     [TestClass]
-    public class utp707DesignLinkedListIterative
+    public class utp0707DesignLinkedListIterative
     {
         [TestMethod]
         public void ListOperations()
