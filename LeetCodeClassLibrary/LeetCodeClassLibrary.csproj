@@ -56,6 +56,7 @@
     <Compile Include="p0855ExamRoomV0.cs" />
     <Compile Include="p0855ExamRoomV1.cs" />
     <Compile Include="p0938RangeSumOfBst.cs" />
+    <Compile Include="p1192CriticalConectionsInANetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
