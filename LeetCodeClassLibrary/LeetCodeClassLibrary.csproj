@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="p0020ValidParentheses.cs" />
     <Compile Include="p1021RemoveOutermostParenthesis.cs" />
     <Compile Include="p0146LruCache.cs" />
     <Compile Include="p0001TwoSum.cs" />
