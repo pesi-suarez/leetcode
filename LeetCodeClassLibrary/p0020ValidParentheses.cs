@@ -2,9 +2,9 @@
 
 namespace p0020ValidParentheses
 {
-    //Better time than 16.67% submissions
     public class Solution
     {
+        //Accepted answer (ft 29.63%)
         public static readonly Dictionary<char, char> ClosingParenthesisDict = new Dictionary<char, char>
         {
             { '(', ')' },
@@ -91,5 +91,35 @@ namespace p0020ValidParentheses
             return true;
         }
 
+        //Top answer (ft 10% when I run it):
+        //Cleaner, though apparently slower.
+        /*
+        public bool IsValid(string s)
+        {
+            Stack<char> stack = new Stack<char>();
+            for (int i = 0; i < s.Length; i++)
+            {
+                char current = s[i];
+                if (current == '(' || current == '[' || current == '{')
+                {
+                    stack.Push(current);
+                }
+                else if (current == ')' || current == ']' || current == '}')
+                {
+                    if (stack.Count == 0) return false;
+                    else
+                    {
+                        char previous = stack.Pop();
+                        if (previous == '(' && current == ')' ||
+                            previous == '[' && current == ']' ||
+                            previous == '{' && current == '}')
+                            continue;
+                        else return false;
+                    }
+                }
+            }
+            return stack.Count == 0;
+        }
+        */
     }
 }
