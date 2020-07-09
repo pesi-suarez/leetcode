@@ -1,18 +1,16 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p754ReachANumber;
+﻿using p754ReachANumber;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0754ReachANumber
     {
-        [TestMethod]
+        [Fact]
         public void DescriptionTests()
         {
             Solution solution = new Solution();
-            Assert.AreEqual(2, solution.ReachNumber(3));
-            Assert.AreEqual(3, solution.ReachNumber(2));
+            Assert.Equal(2, solution.ReachNumber(3));
+            Assert.Equal(3, solution.ReachNumber(2));
         }
     }
 }

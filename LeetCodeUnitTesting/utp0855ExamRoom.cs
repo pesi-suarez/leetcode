@@ -1,17 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0855ExamRoom
     {
-        [TestMethod]
+        [Fact]
         public void ArrayInitilizationZero()
         {
             int[] values = new int[10];
             for (int i = 0; i < values.Length; i++)
-                Assert.AreEqual(0, values[i]);
+                Assert.Equal(0, values[i]);
         }
     }
 }

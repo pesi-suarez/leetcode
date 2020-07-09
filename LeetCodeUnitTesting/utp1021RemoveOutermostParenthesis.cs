@@ -1,19 +1,17 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p1021RemoveOutermostParenthesis;
+﻿using p1021RemoveOutermostParenthesis;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp1021RemoveOutermostParenthesis
     {
-        [TestMethod]
+        [Fact]
         public void DescriptionTests()
         {
             Solution solution = new Solution();
-            Assert.AreEqual("()()()", solution.RemoveOuterParentheses("(()())(())"));
-            Assert.AreEqual("()()()()(())", solution.RemoveOuterParentheses("(()())(())(()(()))"));
-            Assert.AreEqual(string.Empty, solution.RemoveOuterParentheses("()"));
+            Assert.Equal("()()()", solution.RemoveOuterParentheses("(()())(())"));
+            Assert.Equal("()()()()(())", solution.RemoveOuterParentheses("(()())(())(()(()))"));
+            Assert.Equal(string.Empty, solution.RemoveOuterParentheses("()"));
         }
     }
 }

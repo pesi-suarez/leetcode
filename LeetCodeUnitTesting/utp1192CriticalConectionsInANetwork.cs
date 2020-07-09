@@ -1,13 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p1192CriticalConectionsInANetwork;
+﻿using p1192CriticalConectionsInANetwork;
 using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp1192CriticalConectionsInANetwork
     {
-        [TestMethod]
+        [Fact]
         public void DescriptionTest()
         {
             IList<IList<int>> conections = new List<IList<int>>

@@ -1,14 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p707DesignLinkedListIterative;
-using System.Collections.Generic;
+﻿using p707DesignLinkedListIterative;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0707DesignLinkedListIterative
     {
-        [TestMethod]
+        [Fact]
         public void ListOperations()
         {
             Solution myList = new Solution();
@@ -16,8 +13,8 @@ namespace LeetCodeUnitTesting
             myList.AddAtHead(5);
             myList.AddAtTail(1);
             myList.DeleteAtIndex(0);
-            Assert.AreEqual(2, myList.Get(0));
-            Assert.AreEqual(1, myList.Get(1));
+            Assert.Equal(2, myList.Get(0));
+            Assert.Equal(1, myList.Get(1));
         }
     }
 }

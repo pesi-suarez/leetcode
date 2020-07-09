@@ -1,32 +1,31 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p0020ValidParentheses;
+﻿using p0020ValidParentheses;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0020ValidParentheses
     {
-        [TestMethod]
+        [Fact]
         public void CustomTests()
         {
             Solution solution = new Solution();
 
-            Assert.IsTrue(solution.IsValid("()(()(()))"));
-            Assert.IsFalse(solution.IsValid("(())())("));
-            Assert.IsFalse(solution.IsValid("()(()(()))(("));
-            Assert.IsFalse(solution.IsValid("()[]{}["));
+            Assert.True(solution.IsValid("()(()(()))"));
+            Assert.False(solution.IsValid("(())())("));
+            Assert.False(solution.IsValid("()(()(()))(("));
+            Assert.False(solution.IsValid("()[]{}["));
         }
 
-        [TestMethod]
+        [Fact]
         public void DescriptionTests()
         {
             Solution solution = new Solution();
 
-            Assert.IsTrue(solution.IsValid("()"));
-            Assert.IsTrue(solution.IsValid("()[]{}"));
-            Assert.IsFalse(solution.IsValid("(]"));
-            Assert.IsFalse(solution.IsValid("([)]"));
-            Assert.IsTrue(solution.IsValid("{[]}"));
+            Assert.True(solution.IsValid("()"));
+            Assert.True(solution.IsValid("()[]{}"));
+            Assert.False(solution.IsValid("(]"));
+            Assert.False(solution.IsValid("([)]"));
+            Assert.True(solution.IsValid("{[]}"));
         }
 
     }

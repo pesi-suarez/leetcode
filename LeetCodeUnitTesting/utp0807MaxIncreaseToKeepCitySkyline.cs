@@ -1,17 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p807MaxIncreaseToKeepCitySkyline;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using p807MaxIncreaseToKeepCitySkyline;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0807MaxIncreaseToKeepCitySkyline
     {
-        [TestMethod]
+        [Fact]
         public void GivenTest()
         {
             int[][] grid = new int[4][];
@@ -21,7 +15,7 @@ namespace LeetCodeUnitTesting
             grid[3] = new int[] { 0, 3, 1, 0 };
 
             Solution solution = new Solution();
-            Assert.AreEqual(35, solution.MaxIncreaseKeepingSkyline(grid));
+            Assert.Equal(35, solution.MaxIncreaseKeepingSkyline(grid));
         }
     }
 }

@@ -1,17 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p2AddTwoNumbers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using p2AddTwoNumbers;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0002AddTwoNumbers
     {
-        [TestMethod]
+        [Fact]
         public void DescriptionTest()
         {
             //342 + 465 = 807
@@ -44,10 +38,10 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual("708", solution.AddTwoNumbers(a, b).ToString());
+            Assert.Equal("708", solution.AddTwoNumbers(a, b).ToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void FailedTest()
         {
             ListNode a = new ListNode
@@ -63,7 +57,7 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual("01", solution.AddTwoNumbers(a, b).ToString());
+            Assert.Equal("01", solution.AddTwoNumbers(a, b).ToString());
         }
     }
 }

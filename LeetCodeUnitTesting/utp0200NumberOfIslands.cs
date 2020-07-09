@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using p200NumberOfIslands;
+﻿using p200NumberOfIslands;
+using Xunit;
 
 namespace LeetCodeUnitTesting
 {
-    [TestClass]
     public class utp0200NumberOfIslands
     {
-        [TestMethod]
+        [Fact]
         public void DescriptionTest00()
         {
             char[][] data = new char[][]
@@ -23,10 +17,10 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual(1, solution.NumIslands(data));
+            Assert.Equal(1, solution.NumIslands(data));
         }
 
-        [TestMethod]
+        [Fact]
         public void DescriptionTest01()
         {
             char[][] data = new char[][]
@@ -38,10 +32,10 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual(3, solution.NumIslands(data));
+            Assert.Equal(3, solution.NumIslands(data));
         }
 
-        [TestMethod]
+        [Fact]
         public void Trivial00()
         {
             char[][] data = new char[][]
@@ -49,10 +43,10 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual(0, solution.NumIslands(data));
+            Assert.Equal(0, solution.NumIslands(data));
         }
 
-        [TestMethod]
+        [Fact]
         public void Trivial01()
         {
             char[][] data = new char[][]
@@ -61,10 +55,10 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual(1, solution.NumIslands(data));
+            Assert.Equal(1, solution.NumIslands(data));
         }
 
-        [TestMethod]
+        [Fact]
         public void UShapedIsland()
         {
             char[][] data = new char[][]
@@ -76,7 +70,7 @@ namespace LeetCodeUnitTesting
             };
 
             Solution solution = new Solution();
-            Assert.AreEqual(2, solution.NumIslands(data));
+            Assert.Equal(2, solution.NumIslands(data));
         }
 
     }
