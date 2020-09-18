@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace p0004MedianOfTwoSortedArrays
 {
     public class Solution
     {
+        //Accepted answer ft 57.35%
         private class Indexes
         {
             public int Nums1Ini { get; set; }
@@ -49,7 +52,9 @@ namespace p0004MedianOfTwoSortedArrays
             {
                 double nums1Median = ComputeMedian(nums1, indexes.Nums1Ini, indexes.Nums1Fin);
                 double nums2Median = ComputeMedian(nums2, indexes.Nums2Ini, indexes.Nums2Fin);
-                int skippedElements = (indexes.Nums2Fin - indexes.Nums2Ini) / 2;
+                int skippedElements = (indexes.Nums2Fin - indexes.Nums2Ini) % 2 != 0 ?
+                    (indexes.Nums2Fin - indexes.Nums2Ini) / 2 :
+                    (indexes.Nums2Fin - indexes.Nums2Ini) / 2 - 1;
                 if (nums1Median < nums2Median)
                 {
                     indexes = new Indexes
@@ -77,69 +82,42 @@ namespace p0004MedianOfTwoSortedArrays
 
         private double ComputeMedian(int[] nums, int ini, int fin)
         {
-            return (fin - ini) % 2 != 0 ? nums[(fin - ini) / 2] : (nums[(fin - ini) / 2 - 1] + nums[(fin - ini) / 2]) / 2d;
+            return (fin - ini) % 2 != 0 ? nums[ini + (fin - ini) / 2] : (nums[ini + (fin - ini) / 2 - 1] + nums[ini + (fin - ini) / 2]) / 2d;
         }
 
         private bool BaseCaseCondition(Indexes indexes)
         {
             return
-                indexes.Nums1Fin - indexes.Nums1Ini == 1 ||
-                indexes.Nums2Fin - indexes.Nums2Ini == 1;
-        }
-
-        private bool Nums1SliceIsBigger(Indexes indexes)
-        {
-            return indexes.Nums1Fin - indexes.Nums1Ini > indexes.Nums2Fin - indexes.Nums2Ini;
+                indexes.Nums2Fin - indexes.Nums2Ini <= 2;
         }
 
         private double FindMedianBaseCase(int[] bigArray, int[] smallArray, Indexes indexes)
         {
-            if (BigArrayLength(indexes) % 2 != 0)
-            {
-                int bigArrayMedianIndex = (indexes.Nums1Fin - indexes.Nums1Ini) / 2;
-                int bigArrayMedian = bigArray[bigArrayMedianIndex];
-                int singleElement = smallArray[indexes.Nums2Ini];
-                if (singleElement < bigArrayMedian)
-                {
-                    if (bigArrayMedianIndex > 0)
-                    {
-                        if (singleElement > bigArray[bigArrayMedianIndex - 1])
-                            return (bigArrayMedian + singleElement) / 2;
-                        else
-                            return (bigArrayMedian + bigArray[bigArrayMedianIndex - 1]) / 2;
-                    }
-                    else
-                    {
-                        return (bigArrayMedian + singleElement) / 2;
-                    }
-                }
-                else
-                {
-                    if (bigArrayMedianIndex < indexes.Nums1Fin - 1)
-                    {
-                        if (singleElement < bigArray[bigArrayMedianIndex + 1])
-                            return (bigArrayMedian + singleElement) / 2;
-                        else
-                            return (bigArrayMedian + bigArray[bigArrayMedianIndex + 1]) / 2;
+            if (smallArray.Length == 0)
+                return ComputeMedian(bigArray, 0, bigArray.Length);
+            int[] bigArrayCenter = BigArrayLength(indexes) % 2 != 0 ? GetOddCenter(bigArray, indexes) : GetEvenCenter(bigArray, indexes);
+            int[] smallArrayCenter = indexes.Nums2Fin - indexes.Nums2Ini == 2 ?
+                new int[] { smallArray[indexes.Nums2Ini], smallArray[indexes.Nums2Fin-1] } :
+                new int[] { smallArray[indexes.Nums2Ini] };
+            int[] mergedCenter = bigArrayCenter.Concat(smallArrayCenter).ToArray();
+            Array.Sort(mergedCenter);
+            return ComputeMedian(mergedCenter, 0, mergedCenter.Length);
+        }
 
-                    }
-                    else
-                    {
-                        return (bigArrayMedian + singleElement) / 2;
-                    }
-                }
-            }
-            else
-            {
-                int bigArrayMedianLowIndex = (indexes.Nums1Fin - indexes.Nums1Ini) / 2;
-                int bigArrayMedianHighIndex = (indexes.Nums1Fin - indexes.Nums1Ini) / 2 + 1;
-                int singleElement = smallArray[indexes.Nums2Ini];
-                if (singleElement < bigArray[bigArrayMedianLowIndex])
-                    return bigArray[bigArrayMedianLowIndex];
-                else if (singleElement < bigArray[bigArrayMedianHighIndex])
-                    return singleElement;
-                else return bigArray[bigArrayMedianHighIndex];
-            }
+        private int[] GetOddCenter(int[] bigArray, Indexes indexes)
+        {
+            if (bigArray.Length == 1)
+                return bigArray;
+            int centerIndex = indexes.Nums1Ini + (indexes.Nums1Fin - indexes.Nums1Ini) / 2;
+            return new int[] { bigArray[centerIndex - 1], bigArray[centerIndex], bigArray[centerIndex + 1] };
+        }
+
+        private int[] GetEvenCenter(int[] bigArray, Indexes indexes)
+        {
+            if (BigArrayLength(indexes) == 2)
+                return new int[] { bigArray[indexes.Nums1Ini], bigArray[indexes.Nums1Ini + 1] };
+            int centerIndex = indexes.Nums1Ini + (indexes.Nums1Fin - indexes.Nums1Ini) / 2 - 1;
+            return new int[] { bigArray[centerIndex - 1], bigArray[centerIndex], bigArray[centerIndex + 1], bigArray[centerIndex + 2] };
         }
 
         private int BigArrayLength(Indexes indexes)
