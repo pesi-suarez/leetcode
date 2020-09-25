@@ -22,5 +22,6 @@ namespace LeetCodeUnitTesting
             Assert.Equal("aaaa", solution.LongestPalindrome("aaaa"));
             Assert.Equal("bb", solution.LongestPalindrome("abb"));
         }
+
     }
 }

@@ -12,7 +12,6 @@
                 string candidatePalindrome = evenPalindrome.Length > oddPalindrome.Length ? evenPalindrome : oddPalindrome;
                 longestPalindrome = candidatePalindrome.Length > longestPalindrome.Length ? candidatePalindrome : longestPalindrome;
             }
-
             return longestPalindrome;
         }
 
@@ -20,13 +19,8 @@
         {
             if (i == s.Length - 1)
                 return string.Empty;
-
             string palindrome = string.Empty;
-            int limit = i < s.Length / 2 ? i + 1 : s.Length-i-1;
-            //center of odd-length string
-            if (i == s.Length - i - 1)
-                limit--;
-            for (int j = 0; j < limit; j++)
+            for (int j = 0; i-j >= 0 && i+j+1 < s.Length; j++)
             {
                 if (s[i - j] == s[i + j + 1])
                     palindrome = s[i - j] + palindrome + s[i + j + 1];
@@ -39,10 +33,8 @@
         {
             if (i == s.Length - 1)
                 return s[i].ToString();
-
             string palindrome = s[i].ToString();
-            int limit = i < s.Length / 2 ? i : s.Length-i-1;
-            for (int j = 0; j < limit; j++)
+            for (int j = 0; i-j-1 >= 0 && i+j+1 < s.Length; j++)
             {
                 if (s[i - j - 1] == s[i + j + 1])
                     palindrome = s[i - j - 1] + palindrome + s[i + j + 1];
@@ -50,5 +42,6 @@
             }
             return palindrome;
         }
+
     }
 }
